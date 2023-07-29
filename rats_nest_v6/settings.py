@@ -32,7 +32,9 @@ SECRET_KEY = 'django-insecure--h$-uy-1#%$7#xv_2)zu0i5@q!f_1%*=*5oaps@0-&33(7on)(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '8000-enquil-ratsnestv6-lnd343yr6ep.ws-eu102.gitpod.io'
+]
 
 
 # Application definition
@@ -44,6 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'home',
 ]
