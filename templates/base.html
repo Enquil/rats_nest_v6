@@ -58,18 +58,19 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="row w-100">
-                <div class="col-12 col-lg-4">
-                    <!-- navbar toggle button for smaller screebs -->
+                <div class="col-7 col-lg-3">
+                    <!-- navbar toggle button for smaller screens -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                            data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" 
+                            data-target="#site-navigation" aria-controls="site-navigation" 
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <!-- Brand -->
-                    <a class="navbar-brand" href="#"><h1 class="fs-1 m-0">Rats Nest</h1></a>
+                    <a class="navbar-brand" href="#">Rats Nest</a>
                 </div>
-                <!-- col-div containing search form -->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+
+                <!-- div containing search form -->
+                <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 d-none d-lg-block ">
                     <form method="GET" action="">
                         <div class="input-group w-100">
                             <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -83,19 +84,26 @@
                         </div>
                     </form>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <div class="col-12 col-lg-4">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
-                            </li>
-                        </ul>
+
+                <div class="col-5 col-lg-3 text-right">
+                    <a href=""><i class="fa-solid fa-basket-shopping fa-xl" style="color: #ffffff;"></i></a>
+                    <a href=""><i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i></a>
+                </div>
+                <div class="collapse navbar-collapse" id="site-navigation">
+                    <div class="row w-100">
+                        <div class="col-12">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item inline ml-2">
+                                <a class="nav-link text-white" href="#">Clothing</a>
+                                </li>
+                                <li class="nav-item inline ml-2">
+                                <a class="nav-link text-white" href="">Gear and Equipment</a>
+                                </li>
+                                <li class="nav-item inline ml-2">
+                                <a class="nav-link text-white">Supplements</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
