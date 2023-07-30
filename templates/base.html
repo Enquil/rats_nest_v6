@@ -106,14 +106,21 @@
                     <div class="row w-100">
                         <div class="col-12">
                             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                <li class="nav-item inline ml-2">
-                                <a class="nav-link text-white" href="#">Clothing</a>
+                                <li class="nav-item inline ml-2 dropdown">
+                                <!-- clothing link with dropdown -->
+                                    <a class="nav-link text-white" id="clothing-dropdown" data-toggle="dropdown" 
+                                    aria-haspopup="true" aria-expanded="false" href="{% url 'products' %}">
+                                        Clothing
+                                    </a>
+                                <div class="dropdown-menu border-0 rounded-0" aria-labelledby="clothing-dropdown">
+                                    hello
+                                </div>
                                 </li>
                                 <li class="nav-item inline ml-2">
-                                <a class="nav-link text-white" href="">Gear and Equipment</a>
+                                <a class="nav-link text-white" href="{% url 'products' %}">Gear and Equipment</a>
                                 </li>
                                 <li class="nav-item inline ml-2">
-                                <a class="nav-link text-white" href="">Supplements</a>
+                                <a class="nav-link text-white" href="#">Supplements</a>
                                 </li>
                             </ul>
                         </div>

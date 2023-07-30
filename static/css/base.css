@@ -1,5 +1,13 @@
-/* Nav */
+/*----- Nav ------*/
 
 .brand-link {
     font-size: 2em;
 }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+/* .dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+} */
