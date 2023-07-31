@@ -93,8 +93,10 @@ def product_detail(request, product_id):
 
     if product.has_sizes:
         if product.category == 'shoes':
-            size_list = ('35', '36', '37', '38', '39', '40',
-                            '41', '42', '43', '44', '45', '46')
+            size_list = (
+                '35', '36', '37', '38', '39', '40',
+                '41', '42', '43', '44', '45', '46'
+            )
         else:
             size_list = ('XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL')
 
