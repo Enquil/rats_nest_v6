@@ -91,7 +91,6 @@ class TestProductModel(TestCase):
             m_or_f='U',
         )
         test_product.save()
-        print(test_product.sku)
 
         # assert domain got auto-filled
         self.assertEqual(

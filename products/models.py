@@ -111,4 +111,4 @@ class Product(Common):
                 str(random.randint(10000, 99999))
             )
 
-        super(Product, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
