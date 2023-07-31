@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 M_OR_F = (
     (
@@ -92,5 +93,22 @@ class Product(Common):
         null=True, blank=True
     )
     m_or_f = models.CharField(
-        max_length=254, choices=M_OR_F
+        null=True, max_length=254, choices=M_OR_F
     )
+
+    def save(self, *args, **kwargs):
+        '''
+        Autifills domain and sku
+        '''
+        if not self.domain:
+            self.domain = self.category.domain.id
+
+        if not self.sku:
+            self.sku = (
+                f'{self.category.domain.id}' +
+                f'{self.brand.id}' +
+                f'{self.category.id}' +
+                str(random.randint(10000, 99999))
+            )
+
+        super(Product, self).save(*args, **kwargs)
