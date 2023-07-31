@@ -83,6 +83,8 @@ TEMPLATES = [
     },
 ]
 
+SITE_ID = 1
+
 WSGI_APPLICATION = 'rats_nest_v6.wsgi.application'
 
 
