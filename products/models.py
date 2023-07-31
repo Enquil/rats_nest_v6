@@ -98,7 +98,7 @@ class Product(Common):
 
     def save(self, *args, **kwargs):
         '''
-        Autifills domain and sku
+        Autofills domain and sku
         '''
         if not self.domain:
             self.domain = self.category.domain.id
