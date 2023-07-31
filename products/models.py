@@ -1,7 +1,11 @@
 from django.db import models
 
 M_OR_F = (
-    (('F', 'Female'), ('M', 'Male'), ('U', 'Unisex'))
+    (
+        ('F', 'Female'),
+        ('M', 'Male'),
+        ('U', 'Unisex'),
+    )
 )
 
 
@@ -87,4 +91,6 @@ class Product(Common):
     image = models.ImageField(
         null=True, blank=True
     )
-    m_or_f = models.CharField(max_length=254, choices=M_OR_F)
+    m_or_f = models.CharField(
+        max_length=254, choices=M_OR_F
+    )
