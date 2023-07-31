@@ -3,10 +3,13 @@ from django.db import models
 
 class Common(models.Model):
 
-    name = models.CharField(max_length=254)
-
     class Meta:
         abstract = True
+
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
 
 
 class Brand(Common):
@@ -41,9 +44,6 @@ class Category(Common):
         'Domain', null=True, blank=True,
         on_delete=models.SET_NULL
     )
-
-    def __str__(self):
-        return self.name
 
     def get_friendly_name(self):
         return self.friendly_name
@@ -83,6 +83,3 @@ class Product(Common):
     image = models.ImageField(
         null=True, blank=True
     )
-
-    def __str__(self):
-        return self.name
