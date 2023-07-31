@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Category, Brand, Product, Domain
+from django.views import View
 
 
 def all_products(request):
@@ -61,13 +62,45 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+class ProductDetail(View):
+    """ Detailed view for chosen product """
+
+    def get(self, request, product_sku):
+
+        product = get_object_or_404(Product, sku=product_sku)
+        category_parent = str(product.category.parent)
+        size_list = None
+
+        if product.has_sizes:
+            if category_parent == 'shoes':
+                size_list = ('35', '36', '37', '38', '39', '40',
+                             '41', '42', '43', '44', '45', '46')
+            else:
+                size_list = ('XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL')
+
+        return render(request, 'products/product_detail.html',
+                      {
+                        'product': product,
+                        'category_parent': category_parent,
+                        'size_list': size_list,
+                      })
+
+
 def product_detail(request, product_id):
     """ Detailed view for chosen product """
 
     product = get_object_or_404(Product, pk=product_id)
 
+    if product.has_sizes:
+        if product.category == 'shoes':
+            size_list = ('35', '36', '37', '38', '39', '40',
+                            '41', '42', '43', '44', '45', '46')
+        else:
+            size_list = ('XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL')
+
     context = {
         'product': product,
+        'size_list': size_list,
     }
 
     return render(request, 'products/product_detail.html', context)
