@@ -91,12 +91,15 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    # Check if product has sizes
     if product.has_sizes:
-        if product.category == 'shoes':
+        # If shoes
+        if product.category.name == 'shoes':
             size_list = (
                 '35', '36', '37', '38', '39', '40',
                 '41', '42', '43', '44', '45', '46'
             )
+        # If not shoes
         else:
             size_list = ('XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL')
 
