@@ -89,7 +89,7 @@
                     <ul class="navbar-nav mr-auto list-group list-group-horizontal">
                         <!-- shopping bag -->
                         <li class="nav-item ml-auto">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{% url 'view_bag' %}">
                                 <i class="fa-solid fa-basket-shopping fa-2x" style="color: #ffffff;"></i>
                             </a>
                         </li>
@@ -109,7 +109,7 @@
                                 <li class="nav-item inline ml-2 dropdown">
                                 <!-- clothing link with dropdown -->
                                     <a class="nav-link text-white dropdown-toggle" id="clothing-dropdown"
-                                    aria-haspopup="true" aria-expanded="false" href="{% url 'products' %}">
+                                       aria-haspopup="true" aria-expanded="false" href="{% url 'products' %}">
                                         Clothing
                                     </a>
                                     <div class="dropdown-menu border-0 rounded-0 w-100" aria-labelledby="clothing-dropdown">
