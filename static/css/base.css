@@ -2,6 +2,7 @@
 
 .brand-link {
     font-size: 2em;
+    margin-right: 0;
 }
 
 .dropdown:hover>.dropdown-menu {
@@ -21,8 +22,8 @@
 }
 
 /* media queries */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .brand-link {
-      font-size: 28px;
+      font-size: 24px;
     }
   }
