@@ -15,7 +15,9 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
+    # get the product
     product = get_object_or_404(Product, pk=item_id)
+    # uses abs statement if someone manages to fiddle with the form
     quantity = abs(int(request.POST.get('quantity')))
     redirect_url = request.POST.get('redirect_url')
     size = None
@@ -58,5 +60,4 @@ def add_to_bag(request, item_id):
             )
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
