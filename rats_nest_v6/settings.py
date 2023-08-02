@@ -100,12 +100,29 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# Sets email backend for django, this only produces mails in console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Sets authentication method to use email when logging in
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+# Requires new users to register an email
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# Requires user to verify email by entering it twice
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+# Set min length of usernames
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+# Set login and redirect url after logging in
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
 WSGI_APPLICATION = 'rats_nest_v6.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Development Database setting
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
