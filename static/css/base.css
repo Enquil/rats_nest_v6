@@ -19,3 +19,10 @@
     width: 100%;
     object-fit: cover;
 }
+
+/* media queries */
+@media screen and (max-width: 400px) {
+    .brand-link {
+      font-size: 28px;
+    }
+  }
