@@ -90,13 +90,20 @@
                         <!-- shopping bag -->
                         <li class="nav-item ml-auto">
                             <a class="nav-link" href="{% url 'view_bag' %}">
-                                <i class="fa-solid fa-basket-shopping fa-2x" style="color: #ffffff;"></i>
+                                <p class="inline">
+                                    {% if grand_total  %}
+                                    {{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    0.00
+                                    {% endif %}
+                                    <i class="fa-solid fa-basket-shopping fa-xl" style="color: #ffffff;"></i>
+                                </p>
                             </a>
                         </li>
                         <!-- user profile actions -->
                         <li class="nav-item">
                             <a class="nav-link" href="">
-                                <i class="fa-solid fa-user fa-2x" style="color: #ffffff;"></i>
+                                <i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i>
                             </a>
                         </li>
                     </ul>
