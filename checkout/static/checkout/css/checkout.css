@@ -25,6 +25,11 @@
     color: #aab7c4;
 }
 
+.stripe-style-input {
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
 .fieldset-label {
     position: relative;
     right: .5rem;
