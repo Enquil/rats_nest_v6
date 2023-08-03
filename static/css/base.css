@@ -13,6 +13,14 @@
     display: none;
 }
 
+/* Toasts */
+
+.message-container {
+    position: fixed;
+    z-index: 99999;
+    top: 72px;
+    right: 15px;
+}
 
 /* Product Detail */
 
