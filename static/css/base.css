@@ -17,7 +17,7 @@
 
 .message-container {
     position: fixed;
-    z-index: 99999;
+    z-index: 9999999;
     top: 72px;
     right: 15px;
 }
